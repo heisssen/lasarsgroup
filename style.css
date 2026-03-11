@@ -1176,3 +1176,81 @@ textarea.form-control {
     text-align: center;
   }
 }
+
+/* GLOBAL MOBILE OPTIMIZATIONS */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero {
+    min-height: 100svh;
+  }
+  .about-container {
+    gap: 40px;
+  }
+  .stats-grid {
+    gap: 20px;
+  }
+  .stat-number {
+    font-size: 2rem;
+  }
+  .vacancies-grid {
+    grid-template-columns: 1fr;
+  }
+  .vacancy-card {
+    padding: 30px 20px;
+  }
+  .req-container {
+    gap: 40px;
+  }
+  .req-box {
+    padding: 24px;
+  }
+  .faq-question {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+  .form-body {
+    padding: 20px;
+  }
+  .btn {
+    width: 100%;
+    padding: 16px 20px;
+  }
+  .btn-sm,
+  .nav-btn,
+  .mobile-apply,
+  .social-btn {
+    width: auto;
+  }
+  .gallery-item {
+    width: 280px;
+    height: 200px;
+  }
+  .gallery-scroll-track {
+    padding: 0 16px;
+    gap: 16px;
+  }
+  .footer {
+    padding: 50px 0 30px;
+  }
+  .footer-grid {
+    gap: 40px;
+  }
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .tech-label {
+    font-size: 0.75rem;
+  }
+}
