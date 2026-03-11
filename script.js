@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll-fast
+            const walk = (x - startX) * 1.5; // Smoother scroll
             slider.scrollLeft = scrollLeft - walk;
         });
     }
