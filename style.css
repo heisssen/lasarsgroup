@@ -574,7 +574,7 @@ img {
   background-color: var(--bg-card);
   height: 0;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .video-container iframe {
@@ -593,71 +593,71 @@ img {
 
 /* Gallery Section */
 .overflow-hidden {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .gallery-scroll-container {
-    width: 100%;
-    padding: 0 0 40px;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-    cursor: grab;
+  width: 100%;
+  padding: 0 0 40px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  cursor: grab;
 }
 
 .gallery-scroll-container:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .gallery-scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .gallery-scroll-track {
-    display: flex;
-    gap: 30px;
-    width: max-content;
-    margin: 0 auto;
-    padding: 0 20vw; /* padding for center alignment effect */
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0 20vw; /* padding for center alignment effect */
 }
 
 .gallery-item {
-    position: relative;
-    height: 450px;
-    width: auto;
-    flex-shrink: 0;
-    overflow: hidden;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  position: relative;
+  height: 450px;
+  width: auto;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .gallery-item img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-    filter: grayscale(80%) contrast(1.2);
-    transition: filter var(--transition-slow);
-    pointer-events: none; /* Prevents image dragging issues */
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(80%) contrast(1.2);
+  transition: filter var(--transition-slow);
+  pointer-events: none; /* Prevents image dragging issues */
 }
 
 .gallery-item:hover img {
-    filter: grayscale(0%) contrast(1);
+  filter: grayscale(0%) contrast(1);
 }
 
 @media (max-width: 992px) {
-    .gallery-item {
-        height: 350px;
-    }
+  .gallery-item {
+    height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
-    .gallery-item {
-        height: 280px;
-    }
+  .gallery-item {
+    height: 280px;
+  }
 }
 
 /* Vacancies Section */
@@ -732,6 +732,81 @@ img {
   background-color: #d4ff33;
   border-color: #d4ff33;
   box-shadow: 0 0 30px rgba(204, 255, 0, 0.4);
+}
+
+/* Contract 18-24 Section */
+.contract-wrapper {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+}
+
+.contract-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contract-subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.contract-desc {
+  font-size: 1.1rem;
+  color: var(--text-white);
+  line-height: 1.8;
+}
+
+.contract-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.contract-image {
+  position: relative;
+  border: 1px solid var(--border-highlight);
+  padding: 10px;
+  background-color: var(--bg-dark);
+}
+
+.contract-image img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(80%) contrast(1.1);
+  transition: filter var(--transition-slow);
+}
+
+.contract-image:hover img {
+  filter: grayscale(0%) contrast(1);
+}
+
+@media (max-width: 992px) {
+  .contract-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contract-wrapper {
+    padding: 24px;
+  }
 }
 
 /* Requirements Section */
