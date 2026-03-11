@@ -2,21 +2,151 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Спецпрограма «Контракт 18-24: дрони» у спецпідрозділі Lasar's group. Ідеальний старт кар'єри у Military Tech без штурмових підрозділів.">
     <title>Контракт 18-24: Дрони — Lasar's Group</title>
-    
+
     <link rel="icon" type="image/png" href="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ── Contract-page specific styles ── */
+        .contract-hero-bg::after {
+            background:
+                linear-gradient(to top, var(--bg-dark) 0%, rgba(5,5,5,0.2) 50%, rgba(5,5,5,0.7) 100%),
+                linear-gradient(to right, var(--bg-dark) 0%, rgba(5,5,5,0.1) 60%, var(--bg-dark) 100%);
+        }
+
+        /* Numbered offer list — detailed version */
+        .offer-list-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 3rem;
+        }
+
+        .offer-item {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 20px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: start;
+        }
+
+        .offer-item:first-child { padding-top: 0; }
+        .offer-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .offer-index {
+            font-family: var(--font-tech);
+            font-size: 0.72rem;
+            color: var(--neon-dim);
+            letter-spacing: 0.1em;
+            padding-top: 5px;
+        }
+
+        .offer-body {}
+
+        .offer-tag {
+            display: inline-block;
+            font-family: var(--font-tech);
+            font-size: 0.68rem;
+            color: var(--neon-green);
+            letter-spacing: 0.14em;
+            margin-bottom: 8px;
+        }
+
+        .offer-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Two-column info boxes */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 3rem;
+        }
+
+        .info-box {
+            padding: 24px 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            position: relative;
+            transition: border-color var(--transition-fast);
+        }
+
+        .info-box:hover { border-color: var(--border-highlight); }
+
+        .info-box::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--neon-green) 0%, transparent 60%);
+            opacity: 0.5;
+        }
+
+        .info-box-num {
+            font-family: var(--font-tech);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-green);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .info-box-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 10px;
+            color: var(--text-white);
+        }
+
+        .info-box-desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Contract page hero specific */
+        .contract-page-hero {
+            min-height: 55vh;
+            padding-top: 100px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .offer-item { grid-template-columns: 34px 1fr; gap: 14px; padding: 20px 0; }
+            .offer-text { font-size: 0.88rem; }
+            .info-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .info-box { padding: 18px 14px; }
+            .info-box-num { font-size: 1.4rem; }
+            .info-box-title { font-size: 0.74rem; }
+            .info-box-desc { font-size: 0.78rem; }
+
+            .contract-page-hero {
+                min-height: 50vh;
+                padding-top: 80px;
+                padding-bottom: 40px;
+                align-items: flex-end;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
     <div class="hud-overlay"></div>
 
-    <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
@@ -30,40 +160,43 @@
                 </ul>
             </nav>
             <a href="index.html" class="btn btn-outline nav-btn">
-                <span class="btn-bracket"><</span> На головну <span class="btn-bracket">></span>
+                <span class="btn-bracket">←</span> На головну
             </a>
-            
+
             <button class="mobile-toggle" aria-label="Відкрити меню" id="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
-        
-        <!-- Mobile Menu -->
+
         <div class="mobile-menu" id="mobile-menu">
             <ul class="mobile-nav-list">
-                <li><a href="index.html#about" class="mobile-link">Про підрозділ</a></li>
-                <li><a href="index.html#vacancies" class="mobile-link">Вакансії</a></li>
-                <li><a href="index.html#faq" class="mobile-link">FAQ</a></li>
+                <li><a href="index.html#about" class="mobile-link" data-num="01">Про підрозділ</a></li>
+                <li><a href="index.html#vacancies" class="mobile-link" data-num="02">Вакансії</a></li>
+                <li><a href="index.html#faq" class="mobile-link" data-num="03">FAQ</a></li>
             </ul>
-            <a href="index.html" class="btn btn-primary mobile-apply">На головну</a>
+            <a href="index.html" class="btn btn-outline mobile-apply">← На головну</a>
         </div>
     </header>
 
     <main>
-        <!-- Contract Hero -->
-        <section class="hero" style="min-height: 60vh;">
-            <div class="hero-bg" style="opacity: 0.2; background-image: url('https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png');"></div>
+        <!-- Hero -->
+        <section class="hero contract-page-hero">
+            <div class="hero-bg contract-hero-bg" style="opacity:0.25; background-image:url('https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png');"></div>
             <div class="hero-grid"></div>
-            <div class="container hero-container" style="padding-top: 100px;">
-                <div class="hero-content text-center" style="margin: 0 auto;">
-                    <div class="tech-label">/// СПЕЦПРОГРАМА ДЛЯ МОЛОДІ</div>
-                    <h1 class="hero-title">
+            <div class="container" style="position:relative;z-index:1;">
+                <div class="hero-content" style="max-width:680px; margin:0 auto; text-align:center;">
+                    <div class="hero-badge" style="margin:0 auto 1.5rem;">
+                        <span class="hero-badge-dot"></span>
+                        <span class="tech-label">СПЕЦПРОГРАМА ДЛЯ МОЛОДІ</span>
+                    </div>
+                    <h1 class="hero-title" style="font-size:clamp(2.4rem,6vw,4rem);">
                         КОНТРАКТ <span class="text-neon">18-24:</span><br>
                         ДРОНИ ЗАМІСТЬ ШТУРМІВ
                     </h1>
-                    <p class="hero-desc" style="margin: 0 auto 2.5rem;">Робота з високими технологіями, гарантія профільного застосування та ідеальний старт кар'єри у Military Tech.</p>
+                    <p class="hero-desc" style="max-width:540px;margin:0 auto 2rem;">
+                        Робота з технологіями, гарантія профільного застосування та ідеальний старт кар'єри у Military Tech.
+                    </p>
+                    <a href="#apply" class="btn btn-primary btn-lg">ПОДАТИ ЗАЯВКУ</a>
                 </div>
             </div>
         </section>
@@ -71,107 +204,108 @@
         <!-- Contract Details -->
         <section class="section bg-surface">
             <div class="container">
-                <div class="req-container">
-                    <div class="req-content">
+                <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:80px; align-items:start;">
+
+                    <!-- Left: offer list -->
+                    <div>
                         <div class="tech-label mb-2">/// ПЕРЕВАГИ ПРОГРАМИ</div>
-                        <h2 class="section-title mb-4">ЧОМУ САМЕ ЦЕЙ КОНТРАКТ?</h2>
-                        <p class="contract-desc mb-4" style="color: var(--text-light); font-size: 1.1rem; line-height: 1.7;">
-                            Забудьте про стереотипи. Сучасна війна — це війна технологій, інтелекту та швидкості. Нам не потрібні люди для "м'ясних штурмів", нам потрібні розумні та мотивовані оператори, здатні керувати складною технікою.
+                        <h2 class="section-title mb-4">ЧОМУ САМЕ<br>ЦЕЙ КОНТРАКТ?</h2>
+
+                        <p style="font-size:1rem; color:var(--text-light); line-height:1.8; margin-bottom:2.5rem;">
+                            Сучасна війна — це війна технологій та інтелекту. Нам потрібні розумні оператори, здатні керувати складною технікою, а не кандидати для піхоти.
                         </p>
-                        <ul class="offer-list mb-5">
-                            <li>
-                                <div class="list-marker"></div>
-                                <div>
-                                    <span class="d-block mb-1" style="color: var(--neon-green); font-family: var(--font-tech);">[01] ЖОДНИХ ШТУРМІВ</span>
-                                    <span>Виключно технологічні посади. Ви будете працювати пілотом FPV, оператором розвідувальних крил, інженером-зброярем або фахівцем з радіоелектронної боротьби.</span>
+
+                        <div class="offer-list-v2">
+                            <div class="offer-item">
+                                <span class="offer-index">[01]</span>
+                                <div class="offer-body">
+                                    <span class="offer-tag">ЖОДНИХ ШТУРМІВ</span>
+                                    <p class="offer-text">Виключно технологічні посади. Пілот FPV, оператор розвідувальних крил, інженер-зброяр або фахівець РЕБ — ваш вибір.</p>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="list-marker"></div>
-                                <div>
-                                    <span class="d-block mb-1" style="color: var(--neon-green); font-family: var(--font-tech);">[02] ГАРАНТІЯ СПЕЦІАЛЬНОСТІ</span>
-                                    <span>Ми надаємо офіційне відношення, яке гарантує, що ви будете служити саме в нашому спецпідрозділі і саме на тій посаді, на яку пройшли відбір. Вас не переведуть в іншу частину без вашої згоди.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-marker"></div>
-                                <div>
-                                    <span class="d-block mb-1" style="color: var(--neon-green); font-family: var(--font-tech);">[03] НАВЧАННЯ З НУЛЯ ДО ПРОФІ</span>
-                                    <span>Не вмієте літати? Навчимо. Ми маємо власний тренінговий центр, де ви пройдете інтенсивний курс: від симуляторів до бойових вильотів з повним навантаженням.</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="list-marker"></div>
-                                <div>
-                                    <span class="d-block mb-1" style="color: var(--neon-green); font-family: var(--font-tech);">[04] СТАБІЛЬНЕ ЗАБЕЗПЕЧЕННЯ</span>
-                                    <span>Повне забезпечення сучасною технікою, бронезахистом, зв'язком. Офіційна заробітна плата від 20 000 до 130 000 грн (залежно від виконання бойових завдань) + повний пакет соціальних гарантій та статус УБД.</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="req-grid">
-                        <div class="req-box frame-box">
-                            <div class="req-icon font-tech">18-24</div>
-                            <h4 class="req-title">ВІКОВИЙ ЦЕНЗ</h4>
-                            <p class="req-desc">Програма створена спеціально для молоді. Ви можете підписати контракт, навіть якщо ви призовник (не проходили строкову службу). Ваша молодість — це перевага, адже ви швидше опановуєте технології.</p>
-                            <div class="frame-corner top-left"></div>
-                            <div class="frame-corner bottom-right"></div>
-                        </div>
-                        <div class="req-box frame-box">
-                            <div class="req-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                             </div>
-                            <h4 class="req-title">ТЕРМІН КОНТРАКТУ</h4>
-                            <p class="req-desc">Перший контракт укладається на строк <strong>3 роки</strong> (для солдатського складу) або <strong>до оголошення демобілізації</strong>. Все офіційно, прозоро та згідно з чинним законодавством.</p>
-                            <div class="frame-corner top-left"></div>
-                            <div class="frame-corner bottom-right"></div>
+                            <div class="offer-item">
+                                <span class="offer-index">[02]</span>
+                                <div class="offer-body">
+                                    <span class="offer-tag">ГАРАНТІЯ СПЕЦІАЛЬНОСТІ</span>
+                                    <p class="offer-text">Офіційне відношення гарантує службу в нашому підрозділі на обраній посаді. Переведення в іншу частину — тільки за вашою згодою.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <span class="offer-index">[03]</span>
+                                <div class="offer-body">
+                                    <span class="offer-tag">НАВЧАННЯ З НУЛЯ</span>
+                                    <p class="offer-text">Не вмієте літати? Навчимо. Власний тренінговий центр: від симуляторів до бойових вильотів із повним навантаженням.</p>
+                                </div>
+                            </div>
+                            <div class="offer-item">
+                                <span class="offer-index">[04]</span>
+                                <div class="offer-body">
+                                    <span class="offer-tag">СТАБІЛЬНЕ ЗАБЕЗПЕЧЕННЯ</span>
+                                    <p class="offer-text">Заробітна плата від <strong style="color:var(--text-white)">20 000 до 130 000 грн</strong> залежно від виконання завдань. Повний пакет соціальних гарантій та статус УБД.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Right: info boxes + image -->
+                    <div>
+                        <div class="contract-image frame-box" style="margin-bottom:24px;">
+                            <img src="https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png" alt="Контракт 18-24">
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-box">
+                                <div class="info-box-num font-tech">18-24</div>
+                                <h4 class="info-box-title">ВІКОВІ РАМКИ</h4>
+                                <p class="info-box-desc">Навіть якщо ви призовник без досвіду — ваша молодість перевага при освоєнні технологій.</p>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box-num font-tech">3 р.</div>
+                                <h4 class="info-box-title">ТЕРМІН КОНТРАКТУ</h4>
+                                <p class="info-box-desc">Перший контракт — 3 роки або до оголошення демобілізації. Офіційно, прозоро.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Apply Form Section -->
+        <!-- Apply Form -->
         <section id="apply" class="apply section form-bg">
             <div class="container container-sm relative z-10">
                 <div class="section-header text-center mb-5">
                     <div class="tech-label mb-2">/// ІНІЦІАЛІЗАЦІЯ</div>
                     <h2 class="section-title">ЗАЯВКА НА ПРОГРАМУ</h2>
-                    <p class="apply-desc">Заповніть форму. Наші рекрутери зв'яжуться з вами для співбесіди на спецпрограму "18-24".</p>
+                    <p style="color:var(--text-light);margin-top:.75rem;font-size:.95rem;">
+                        Наші рекрутери зв'яжуться з вами для співбесіди на спецпрограму «18-24».
+                    </p>
                 </div>
-                
+
                 <form class="apply-form terminal-box" id="applyForm">
                     <div class="terminal-header">
-                        <div class="term-dot"></div>
-                        <div class="term-dot"></div>
-                        <div class="term-dot"></div>
-                        <span class="term-title font-tech">USER_INPUT_PROTOCOL_18_24</span>
+                        <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
+                        <span class="term-title">USER_INPUT_PROTOCOL_18_24</span>
                     </div>
-                    
                     <div class="form-body">
                         <div class="form-group">
-                            <label for="name" class="form-label font-tech">> ПІБ *</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="Введіть ваше прізвище, ім'я та по батькові">
+                            <label for="name" class="form-label">> ПІБ *</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Прізвище, ім'я та по батькові" autocomplete="name">
                         </div>
-                        
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="phone" class="form-label font-tech">> ТЕЛЕФОН *</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+380">
+                                <label for="phone" class="form-label">> ТЕЛЕФОН *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+380" autocomplete="tel">
                             </div>
                             <div class="form-group">
-                                <label for="age" class="form-label font-tech">> ВІК *</label>
-                                <input type="number" id="age" name="age" class="form-control" required placeholder="Років" min="18" max="24">
+                                <label for="age" class="form-label">> ВІК *</label>
+                                <input type="number" id="age" name="age" class="form-control" required placeholder="Років" min="18" max="24" inputmode="numeric">
                             </div>
                         </div>
-
-                        <div class="form-group" style="display: none;">
-                            <input type="hidden" id="military_status" name="military_status" value="civilian">
-                        </div>
-                        
                         <div class="form-group">
-                            <label for="vacancy" class="form-label font-tech">> БАЖАНИЙ НАПРЯМОК *</label>
+                            <label for="vacancy" class="form-label">> БАЖАНИЙ НАПРЯМОК *</label>
                             <div class="select-wrapper">
                                 <select id="vacancy" name="vacancy" class="form-control" required>
                                     <option value="" disabled selected>Оберіть напрямок...</option>
@@ -181,17 +315,14 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="experience" class="form-label font-tech">> НАВИЧКИ (КОМП'ЮТЕРНІ ІГРИ / СИМУЛЯТОРИ)</label>
-                            <textarea id="experience" name="experience" class="form-control" rows="3" placeholder="Опишіть ваш досвід у симуляторах дронів, іграх, інженерії або програмуванні..."></textarea>
+                            <label for="experience" class="form-label">> НАВИЧКИ (ІГРИ / СИМУЛЯТОРИ)</label>
+                            <textarea id="experience" name="experience" class="form-control" rows="3" placeholder="Ваш досвід у симуляторах дронів, іграх, інженерії або програмуванні..."></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-block submit-btn font-tech">
                             [ ВІДПРАВИТИ_ДАНІ ]
                         </button>
-                        
-                        <div class="form-status" id="formStatus" style="display: none;">
+                        <div class="form-status" id="formStatus" style="display:none;">
                             <span class="font-tech text-neon">> STATUS: SUCCESS. ДАНІ ПРИЙНЯТО. ОЧІКУЙТЕ НА ЗВ'ЯЗОК.</span>
                         </div>
                     </div>
@@ -200,18 +331,16 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png" alt="Lasar's Group" width="160">
+                    <img src="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png" alt="Lasar's Group" width="150">
                     <p class="footer-desc mt-3 font-tech text-light">
                         /// НГУ<br>
                         Спецпідрозділ безпілотних авіаційних комплексів.
                     </p>
                 </div>
-                
                 <div class="footer-links">
                     <div class="footer-col">
                         <h4 class="footer-title font-tech text-neon">НАВІГАЦІЯ</h4>
@@ -220,7 +349,6 @@
                             <li><a href="index.html#vacancies">Вакансії</a></li>
                         </ul>
                     </div>
-                    
                     <div class="footer-col">
                         <h4 class="footer-title font-tech text-neon">ЗВ'ЯЗОК</h4>
                         <div class="social-links">
@@ -231,10 +359,9 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom border-t font-tech">
+            <div class="footer-bottom font-tech">
                 <p>&copy; 2025 LASAR'S GROUP. УСІ ПРАВА ЗАХИЩЕНО.</p>
-                <p class="created-with">SYS.VER: 1.0.0</p>
+                <p>SYS.VER: 1.0.0</p>
             </div>
         </div>
     </footer>

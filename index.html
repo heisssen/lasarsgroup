@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Легендарний спецпідрозділ безпілотних авіаційних комплексів «Lasar's group» у складі Національної гвардії України. Приєднуйся до найкращих: вакансії операторів FPV, БпАК, РЕБ.">
     <meta name="keywords" content="Lasar, Lazar, Lasar group, Lasargroup, спецпідрозділ БпАК, Національна гвардія України, НГУ, оператори FPV, дрони, вакансії ЗСУ">
     <meta name="author" content="Lasar's Group">
@@ -11,13 +11,12 @@
     <meta property="og:image" content="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png">
     <meta property="og:url" content="https://lasarsgroup.army">
     <meta property="og:type" content="website">
-    
+
     <title>Lasar's Group — Спецпідрозділ БпАК Національної гвардії України</title>
-    
+
     <link rel="icon" type="image/png" href="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Додано Space Grotesk для "технічного" моноширинного вигляду -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,7 +24,6 @@
 
     <div class="hud-overlay"></div>
 
-    <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#" class="logo">
@@ -42,34 +40,34 @@
             <a href="#apply" class="btn btn-outline nav-btn">
                 <span class="btn-bracket">[</span> Приєднатися <span class="btn-bracket">]</span>
             </a>
-            
+
             <button class="mobile-toggle" aria-label="Відкрити меню" id="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
-        
-        <!-- Mobile Menu -->
+
         <div class="mobile-menu" id="mobile-menu">
             <ul class="mobile-nav-list">
-                <li><a href="#about" class="mobile-link">Про підрозділ</a></li>
-                <li><a href="#vacancies" class="mobile-link">Вакансії</a></li>
-                <li><a href="#requirements" class="mobile-link">Умови</a></li>
-                <li><a href="#faq" class="mobile-link">FAQ</a></li>
+                <li><a href="#about" class="mobile-link" data-num="01">Про підрозділ</a></li>
+                <li><a href="#vacancies" class="mobile-link" data-num="02">Вакансії</a></li>
+                <li><a href="#requirements" class="mobile-link" data-num="03">Умови</a></li>
+                <li><a href="#faq" class="mobile-link" data-num="04">FAQ</a></li>
             </ul>
-            <a href="#apply" class="btn btn-primary mobile-apply">Приєднатися</a>
+            <a href="#apply" class="btn btn-primary mobile-apply">[ ПОДАТИ_ЗАЯВКУ ]</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero">
             <div class="hero-bg"></div>
             <div class="hero-grid"></div>
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="tech-label">/// НАЦІОНАЛЬНА ГВАРДІЯ УКРАЇНИ</div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        <span class="tech-label">Національна гвардія України</span>
+                    </div>
                     <h1 class="hero-title">
                         ХОЧЕШ НИЩИТИ ВОРОГА<br>
                         ПЛІЧ-О-ПЛІЧ З <span class="text-neon">НАЙКРАЩИМИ?</span>
@@ -77,6 +75,7 @@
                     <p class="hero-desc">Відновлення справедливості та відплата по заслугах. Стань оператором майбутнього.</p>
                     <div class="hero-actions">
                         <a href="#apply" class="btn btn-primary btn-lg">ПОДАТИ ЗАЯВКУ</a>
+                        <a href="#about" class="btn btn-outline">Дізнатись більше</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +85,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about" class="about section">
             <div class="container about-container">
                 <div class="about-text">
@@ -96,11 +95,11 @@
                         Ми – елітний підрозділ, що спеціалізується на використанні сучасних технологій, дронів та засобів РЕБ для ефективного виконання бойових завдань. Знищуємо ворога технологічно, точно, безжально.
                     </p>
                     <div class="stats-grid">
-                        <div class="stat-item border-tl">
+                        <div class="stat-item">
                             <span class="stat-number text-neon font-tech">2022</span>
                             <span class="stat-label">РІК ЗАСНУВАННЯ</span>
                         </div>
-                        <div class="stat-item border-tl">
+                        <div class="stat-item">
                             <span class="stat-number text-neon font-tech">100+</span>
                             <span class="stat-label">УСПІШНИХ ОПЕРАЦІЙ</span>
                         </div>
@@ -116,14 +115,13 @@
             </div>
         </section>
 
-        <!-- Video Section -->
+        <!-- Video -->
         <section id="video" class="video section bg-surface">
             <div class="container container-sm">
                 <div class="section-header text-center mb-5">
                     <div class="tech-label mb-2">/// 01.5 — РОБОТА ПІДРОЗДІЛУ</div>
                     <h2 class="section-title">МИ В ДІЇ</h2>
                 </div>
-                
                 <div class="video-container frame-box">
                     <iframe src="https://www.youtube.com/embed/d7W6HV5NzH8?rel=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <div class="frame-corner top-left"></div>
@@ -134,7 +132,7 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
+        <!-- Gallery -->
         <section id="gallery" class="gallery section overflow-hidden">
             <div class="container">
                 <div class="section-header text-center mb-5">
@@ -142,96 +140,104 @@
                     <h2 class="section-title">РЕЗУЛЬТАТИ</h2>
                 </div>
             </div>
-            
-            <div class="gallery-scroll-container">
-                <div class="gallery-scroll-track">
-                    <div class="gallery-item frame-box">
-                        <img src="dos_1.png" alt="Досягнення 1" class="img-fluid" onerror="this.src='https://lasarsgroup.army/media/xiHVdi79VC.png'">
-                        <div class="frame-corner top-left"></div>
-                        <div class="frame-corner bottom-right"></div>
-                    </div>
-                    <div class="gallery-item frame-box">
-                        <img src="dos_2.png" alt="Досягнення 2" class="img-fluid" onerror="this.src='https://lasarsgroup.army/media/Tc71OAEUH3.png'">
-                        <div class="frame-corner top-left"></div>
-                        <div class="frame-corner bottom-right"></div>
-                    </div>
-                    <div class="gallery-item frame-box">
-                        <img src="dos_3.png" alt="Досягнення 3" class="img-fluid" onerror="this.src='https://lasarsgroup.army/media/dEsWiNmSY0.png'">
-                        <div class="frame-corner top-left"></div>
-                        <div class="frame-corner bottom-right"></div>
+
+            <div class="gallery-wrapper">
+                <button class="gallery-arrow prev" aria-label="Попереднє фото">&#8592;</button>
+                <button class="gallery-arrow next" aria-label="Наступне фото">&#8594;</button>
+
+                <div class="gallery-scroll-container" id="galleryScroll">
+                    <div class="gallery-scroll-track" id="galleryTrack">
+                        <div class="gallery-item frame-box">
+                            <img src="dos_1.png" alt="Досягнення 1" onerror="this.src='https://lasarsgroup.army/media/xiHVdi79VC.png'">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                        </div>
+                        <div class="gallery-item frame-box">
+                            <img src="dos_2.png" alt="Досягнення 2" onerror="this.src='https://lasarsgroup.army/media/Tc71OAEUH3.png'">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                        </div>
+                        <div class="gallery-item frame-box">
+                            <img src="dos_3.png" alt="Досягнення 3" onerror="this.src='https://lasarsgroup.army/media/dEsWiNmSY0.png'">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="gallery-dots" id="galleryDots"></div>
             </div>
         </section>
 
-        <!-- Vacancies Section -->
+        <!-- Vacancies -->
         <section id="vacancies" class="vacancies section bg-surface">
             <div class="container">
                 <div class="section-header">
                     <div class="tech-label mb-2">/// 02 — НАБІР ВІДКРИТО</div>
                     <h2 class="section-title">АКТУАЛЬНІ ВАКАНСІЇ</h2>
                 </div>
-                
+
                 <div class="vacancies-grid">
                     <div class="vacancy-card">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-neon">[01]</span>
+                            <span class="vacancy-num font-tech">[01]</span>
                             <h3 class="vacancy-title">ОПЕРАТОРИ FPV ТА БпАК</h3>
                         </div>
                         <p class="vacancy-desc">Керування ударними дронами, системами РЕБ та аеророзвідка.</p>
                     </div>
-                    
+
                     <div class="vacancy-card">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-neon">[02]</span>
+                            <span class="vacancy-num font-tech">[02]</span>
                             <h3 class="vacancy-title">ІНСТРУКТОРИ</h3>
                         </div>
                         <p class="vacancy-desc">Навчання та підготовка нових операторів до бойових умов.</p>
                     </div>
-                    
+
                     <div class="vacancy-card">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-neon">[03]</span>
+                            <span class="vacancy-num font-tech">[03]</span>
                             <h3 class="vacancy-title">СПЕЦІАЛІСТИ З РЕБ</h3>
                         </div>
                         <p class="vacancy-desc">Аналітики, інженери, техніки для роботи з радіоелектронною боротьбою.</p>
                     </div>
-                    
+
                     <div class="vacancy-card">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-neon">[04]</span>
+                            <span class="vacancy-num font-tech">[04]</span>
                             <h3 class="vacancy-title">ВОДІЇ ТА МЕХАНІКИ</h3>
                         </div>
                         <p class="vacancy-desc">Автослюсарі та досвідчені водії для забезпечення логістики.</p>
                     </div>
-                    
+
                     <div class="vacancy-card">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-neon">[05]</span>
+                            <span class="vacancy-num font-tech">[05]</span>
                             <h3 class="vacancy-title">ВІЙСЬКОВОСЛУЖБОВЦІ</h3>
                         </div>
                         <p class="vacancy-desc">Психологи, медики та інші вузькопрофільні фахівці.</p>
                     </div>
-                    
+
+                    <!-- Fixed highlight card — dark bg, neon accents only -->
                     <div class="vacancy-card highlight">
                         <div class="card-glow"></div>
                         <div class="vacancy-header">
-                            <span class="vacancy-num font-tech text-dark">[06]</span>
-                            <h3 class="vacancy-title text-dark">НАЙКРАЩА У СВІТІ РОБОТА</h3>
+                            <span class="vacancy-num font-tech">[06]</span>
+                            <h3 class="vacancy-title">НАЙКРАЩА У СВІТІ РОБОТА</h3>
                         </div>
-                        <p class="vacancy-desc text-dark">«Контракт 18-24: дрони» для молоді, зацікавленої у технологіях.</p>
-                        <a href="#apply" class="btn btn-dark btn-sm mt-3">ДЕТАЛЬНІШЕ</a>
+                        <p class="vacancy-desc">«Контракт 18-24: дрони» для молоді, зацікавленої у технологіях.</p>
+                        <a href="contract.html" class="btn btn-dark btn-sm mt-3">ДЕТАЛЬНІШЕ</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contract 18-24 Section -->
+        <!-- Contract 18-24 -->
         <section id="contract1824" class="contract section">
             <div class="container">
                 <div class="contract-wrapper frame-box">
@@ -239,12 +245,12 @@
                         <div class="contract-content">
                             <div class="tech-label mb-2">/// СПЕЦПРОГРАМА</div>
                             <h2 class="section-title">КОНТРАКТ <span class="text-neon font-tech">18-24</span></h2>
-                            <h3 class="contract-subtitle font-tech text-light mb-4">> ДРОНИ ЗАМІСТЬ ШТУРМІВ</h3>
+                            <h3 class="contract-subtitle font-tech text-light">> ДРОНИ ЗАМІСТЬ ШТУРМІВ</h3>
                             <p class="contract-desc">
-                                Спеціальна програма для молоді від 18 до 24 років. У вас є можливість підписати контракт <strong>виключно на посади, пов'язані з безпілотними системами</strong> (оператор БпАК, інженер, спеціаліст РЕБ). Ніякої звичайної піхоти — лише робота з високими технологіями та гарантоване застосування за фахом.
+                                Спеціальна програма для молоді від 18 до 24 років. Підписати контракт <strong style="color:var(--text-white)">виключно на технологічні посади</strong> — оператор БпАК, інженер, спеціаліст РЕБ. Ніякої піхоти — лише робота з технологіями та гарантоване застосування за фахом.
                             </p>
-                            
-                            <div class="contract-features mt-4">
+
+                            <div class="contract-features">
                                 <div class="feature-item">
                                     <span class="feature-icon text-neon font-tech">[+]</span>
                                     <span>Гарантія не потрапити в штурмові підрозділи</span>
@@ -258,14 +264,14 @@
                                     <span>Ідеальний старт кар'єри у Military Tech</span>
                                 </div>
                             </div>
-                            
-                            <div style="margin-top: 4rem;">
+
+                            <div style="margin-top:3rem;">
                                 <a href="contract.html" class="btn btn-primary">ОБРАТИ ПРОГРАМУ</a>
                             </div>
                         </div>
                         <div class="contract-image-col">
                             <div class="contract-image frame-box">
-                                <img src="https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png" alt="Контракт 18-24" class="img-fluid">
+                                <img src="https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png" alt="Контракт 18-24">
                                 <div class="frame-corner top-right"></div>
                                 <div class="frame-corner bottom-left"></div>
                             </div>
@@ -277,8 +283,8 @@
             </div>
         </section>
 
-        <!-- Requirements Section -->
-        <section id="requirements" class="requirements section">
+        <!-- Requirements -->
+        <section id="requirements" class="requirements section bg-surface">
             <div class="container">
                 <div class="req-container">
                     <div class="req-content">
@@ -303,7 +309,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="req-grid">
                         <div class="req-box frame-box">
                             <div class="req-icon font-tech">18-35</div>
@@ -326,14 +332,13 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq section bg-surface">
+        <!-- FAQ -->
+        <section id="faq" class="faq section">
             <div class="container container-sm">
                 <div class="section-header text-center mb-5">
                     <div class="tech-label mb-2">/// 04 — БАЗА ЗНАНЬ</div>
                     <h2 class="section-title">ЧАСТІ ЗАПИТАННЯ</h2>
                 </div>
-                
                 <div class="faq-accordion">
                     <div class="faq-item">
                         <button class="faq-question font-tech">
@@ -350,7 +355,7 @@
                             <span class="faq-toggle-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Ви залишаєте заявку -> проходите співбесіду -> після успішного погодження ми надаємо рекомендаційний лист (відношення) -> з ним ви йдете до ТЦК для цільової мобілізації саме до нас.</p>
+                            <p>Ви залишаєте заявку → проходите співбесіду → після успішного погодження ми надаємо рекомендаційний лист (відношення) → з ним ви йдете до ТЦК для цільової мобілізації саме до нас.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -375,54 +380,48 @@
             </div>
         </section>
 
-        <!-- Apply Form Section -->
+        <!-- Apply Form -->
         <section id="apply" class="apply section form-bg">
             <div class="container container-sm relative z-10">
                 <div class="section-header text-center mb-5">
                     <div class="tech-label mb-2">/// 05 — ІНІЦІАЛІЗАЦІЯ</div>
                     <h2 class="section-title">ЗАПОВНИТИ АНКЕТУ</h2>
-                    <p class="apply-desc">Заповніть форму нижче. Наші рекрутери зв'яжуться з вами для призначення співбесіди.</p>
+                    <p class="apply-desc" style="color:var(--text-light);margin-top:.75rem;">Заповніть форму нижче. Наші рекрутери зв'яжуться з вами для призначення співбесіди.</p>
                 </div>
-                
+
                 <form class="apply-form terminal-box" id="applyForm">
                     <div class="terminal-header">
-                        <div class="term-dot"></div>
-                        <div class="term-dot"></div>
-                        <div class="term-dot"></div>
-                        <span class="term-title font-tech">USER_INPUT_PROTOCOL</span>
+                        <div class="term-dot"></div><div class="term-dot"></div><div class="term-dot"></div>
+                        <span class="term-title">USER_INPUT_PROTOCOL</span>
                     </div>
-                    
                     <div class="form-body">
                         <div class="form-group">
-                            <label for="name" class="form-label font-tech">> ПІБ *</label>
-                            <input type="text" id="name" name="name" class="form-control" required placeholder="Введіть ваше прізвище, ім'я та по батькові">
+                            <label for="name" class="form-label">> ПІБ *</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Введіть ваше прізвище, ім'я та по батькові" autocomplete="name">
                         </div>
-                        
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="phone" class="form-label font-tech">> ТЕЛЕФОН *</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+380">
+                                <label for="phone" class="form-label">> ТЕЛЕФОН *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+380" autocomplete="tel">
                             </div>
                             <div class="form-group">
-                                <label for="age" class="form-label font-tech">> ВІК *</label>
-                                <input type="number" id="age" name="age" class="form-control" required placeholder="Років" min="18" max="60">
+                                <label for="age" class="form-label">> ВІК *</label>
+                                <input type="number" id="age" name="age" class="form-control" required placeholder="Років" min="18" max="60" inputmode="numeric">
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="military_status" class="form-label font-tech">> ВІЙСЬКОВИЙ СТАТУС *</label>
+                            <label for="military_status" class="form-label">> ВІЙСЬКОВИЙ СТАТУС *</label>
                             <div class="select-wrapper">
                                 <select id="military_status" name="military_status" class="form-control" required>
-                                    <option value="" disabled selected>Оберіть статус з переліку...</option>
+                                    <option value="" disabled selected>Оберіть статус...</option>
                                     <option value="civilian">Цивільний (не служив)</option>
-                                    <option value="mobilized">Мобілізований / Контрактник (діючий військовий)</option>
+                                    <option value="mobilized">Мобілізований / Контрактник</option>
                                     <option value="reserve">В запасі / Маю військовий досвід</option>
                                 </select>
                             </div>
                         </div>
-                        
                         <div class="form-group">
-                            <label for="vacancy" class="form-label font-tech">> БАЖАНА ПОСАДА *</label>
+                            <label for="vacancy" class="form-label">> БАЖАНА ПОСАДА *</label>
                             <div class="select-wrapper">
                                 <select id="vacancy" name="vacancy" class="form-control" required>
                                     <option value="" disabled selected>Оберіть посаду...</option>
@@ -434,38 +433,32 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="experience" class="form-label font-tech">> ДОСВІД / НАВИЧКИ</label>
+                            <label for="experience" class="form-label">> ДОСВІД / НАВИЧКИ</label>
                             <textarea id="experience" name="experience" class="form-control" rows="3" placeholder="Опишіть ваш цивільний або військовий досвід, наліт у симуляторах тощо..."></textarea>
                         </div>
-
                         <button type="submit" class="btn btn-primary btn-block submit-btn font-tech">
                             [ ВІДПРАВИТИ_ДАНІ ]
                         </button>
-                        
-                        <div class="form-status" id="formStatus" style="display: none;">
+                        <div class="form-status" id="formStatus" style="display:none;">
                             <span class="font-tech text-neon">> STATUS: SUCCESS. ДАНІ ПРИЙНЯТО. ОЧІКУЙТЕ НА ЗВ'ЯЗОК.</span>
                         </div>
                     </div>
                 </form>
             </div>
         </section>
-
     </main>
 
-    <!-- Footer -->
     <footer id="contacts" class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png" alt="Lasar's Group" width="160">
+                    <img src="https://lasarsgroup.army/assets/logo-header-D6M71Ddd.png" alt="Lasar's Group" width="150">
                     <p class="footer-desc mt-3 font-tech text-light">
                         /// НГУ<br>
                         Спецпідрозділ безпілотних авіаційних комплексів.
                     </p>
                 </div>
-                
                 <div class="footer-links">
                     <div class="footer-col">
                         <h4 class="footer-title font-tech text-neon">НАВІГАЦІЯ</h4>
@@ -475,7 +468,6 @@
                             <li><a href="#requirements">Умови</a></li>
                         </ul>
                     </div>
-                    
                     <div class="footer-col">
                         <h4 class="footer-title font-tech text-neon">ЗВ'ЯЗОК</h4>
                         <div class="social-links">
@@ -486,10 +478,9 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom border-t font-tech">
+            <div class="footer-bottom font-tech">
                 <p>&copy; 2025 LASAR'S GROUP. УСІ ПРАВА ЗАХИЩЕНО.</p>
-                <p class="created-with">SYS.VER: 1.0.0</p>
+                <p>SYS.VER: 1.0.0</p>
             </div>
         </div>
     </footer>
