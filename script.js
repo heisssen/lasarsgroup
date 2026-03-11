@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Animate hamburger icon
             const spans = mobileToggle.querySelectorAll('span');
             if (mobileMenu.classList.contains('active')) {
-                spans[0].style.transform = 'translateY(8px) rotate(45deg)';
+                spans[0].style.transform = 'rotate(45deg) translate(2px, -2px)';
                 spans[1].style.opacity = '0';
-                spans[2].style.transform = 'translateY(-8px) rotate(-45deg)';
+                spans[2].style.transform = 'rotate(-45deg) translate(2px, 2px)';
             } else {
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
