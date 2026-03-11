@@ -361,14 +361,14 @@ img {
   right: -100%;
   width: 100%;
   height: 100vh;
-  background-color: var(--bg-dark);
+  background-color: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(15px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: var(--transition-slow);
+  transition: right var(--transition-slow);
   z-index: 999;
-  border-left: 1px solid var(--border-color);
 }
 
 .mobile-menu.active {
@@ -387,6 +387,12 @@ img {
   font-size: 1.5rem;
   font-family: var(--font-tech);
   text-transform: uppercase;
+  color: var(--text-white);
+  letter-spacing: 0.1em;
+}
+
+.mobile-link:hover {
+  color: var(--neon-green);
 }
 
 @media (max-width: 992px) {
