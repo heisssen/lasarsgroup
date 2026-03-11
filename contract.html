@@ -13,133 +13,185 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* ── Contract-page specific styles ── */
-        .contract-hero-bg::after {
-            background:
-                linear-gradient(to top, var(--bg-dark) 0%, rgba(5,5,5,0.2) 50%, rgba(5,5,5,0.7) 100%),
-                linear-gradient(to right, var(--bg-dark) 0%, rgba(5,5,5,0.1) 60%, var(--bg-dark) 100%);
+        /* ── Contract page styles ── */
+
+        .contract-page-hero {
+            min-height: 56vh;
+            align-items: center;
+            padding-top: 100px;
+            padding-bottom: 60px;
         }
 
-        /* Numbered offer list — detailed version */
+        .contract-hero-bg::after {
+            background:
+                linear-gradient(to top, var(--bg-dark) 0%, rgba(5,5,5,0.15) 55%, rgba(5,5,5,0.65) 100%),
+                linear-gradient(to right, var(--bg-dark) 0%, rgba(5,5,5,0.05) 60%, var(--bg-dark) 100%);
+        }
+
+        /* ── Two-column layout ── */
+        .contract-details-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* ── Offer list ── */
         .offer-list-v2 {
             display: flex;
             flex-direction: column;
-            gap: 0;
-            margin-bottom: 3rem;
         }
 
         .offer-item {
             display: grid;
-            grid-template-columns: 44px 1fr;
-            gap: 20px;
-            padding: 28px 0;
+            grid-template-columns: 40px 1fr;
+            gap: 18px;
+            padding: 24px 0;
             border-bottom: 1px solid var(--border-color);
             align-items: start;
         }
 
         .offer-item:first-child { padding-top: 0; }
-        .offer-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .offer-item:last-child  { border-bottom: none; padding-bottom: 0; }
 
         .offer-index {
             font-family: var(--font-tech);
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             color: var(--neon-dim);
-            letter-spacing: 0.1em;
-            padding-top: 5px;
+            letter-spacing: 0.12em;
+            padding-top: 4px;
+            line-height: 1;
         }
 
-        .offer-body {}
-
         .offer-tag {
-            display: inline-block;
+            display: block;
             font-family: var(--font-tech);
-            font-size: 0.68rem;
+            font-size: 0.65rem;
             color: var(--neon-green);
-            letter-spacing: 0.14em;
-            margin-bottom: 8px;
+            letter-spacing: 0.16em;
+            margin-bottom: 7px;
         }
 
         .offer-text {
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             color: var(--text-light);
             line-height: 1.7;
+            margin: 0;
         }
 
-        /* Two-column info boxes */
-        .info-grid {
+        /* ── Right column ── */
+        .contract-right {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Image */
+        .contract-photo {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--bg-card);
+        }
+
+        .contract-photo img {
+            width: 100%;
+            display: block;
+            filter: grayscale(60%) contrast(1.1);
+            transition: filter 0.6s ease;
+        }
+
+        .contract-photo:hover img { filter: grayscale(0%) contrast(1); }
+
+        /* Info boxes row */
+        .info-boxes {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 3rem;
+            gap: 12px;
         }
 
         .info-box {
-            padding: 24px 20px;
+            padding: 20px 18px;
             border: 1px solid var(--border-color);
             background-color: var(--bg-card);
             position: relative;
-            transition: border-color var(--transition-fast);
+            overflow: hidden;
         }
 
-        .info-box:hover { border-color: var(--border-highlight); }
-
-        .info-box::before {
+        .info-box::after {
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, var(--neon-green) 0%, transparent 60%);
-            opacity: 0.5;
+            top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, var(--neon-green) 0%, transparent 55%);
+            opacity: 0.45;
         }
 
         .info-box-num {
             font-family: var(--font-tech);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--neon-green);
             line-height: 1;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .info-box-title {
-            font-size: 0.8rem;
-            letter-spacing: 0.06em;
-            margin-bottom: 10px;
+            font-family: var(--font-heading);
+            font-size: 0.72rem;
+            letter-spacing: 0.07em;
             color: var(--text-white);
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
         .info-box-desc {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
-        /* Contract page hero specific */
-        .contract-page-hero {
-            min-height: 55vh;
-            padding-top: 100px;
-            align-items: center;
-        }
-
+        /* ── Mobile ── */
         @media (max-width: 768px) {
-            .offer-item { grid-template-columns: 34px 1fr; gap: 14px; padding: 20px 0; }
-            .offer-text { font-size: 0.88rem; }
-            .info-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-            .info-box { padding: 18px 14px; }
-            .info-box-num { font-size: 1.4rem; }
-            .info-box-title { font-size: 0.74rem; }
-            .info-box-desc { font-size: 0.78rem; }
-
             .contract-page-hero {
-                min-height: 50vh;
-                padding-top: 80px;
+                min-height: 48vh;
+                padding-top: 76px;
                 padding-bottom: 40px;
                 align-items: flex-end;
             }
-        }
 
-        @media (max-width: 400px) {
-            .info-grid { grid-template-columns: 1fr; }
+            .contract-details-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            /* On mobile: show image ABOVE the text, inline as a banner */
+            .contract-right {
+                order: -1; /* photo first */
+                gap: 0;
+                margin-bottom: 32px;
+            }
+
+            .contract-photo {
+                height: 200px;
+            }
+
+            .contract-photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 30%;
+            }
+
+            .info-boxes {
+                display: none; /* hidden on mobile, info is in the list */
+            }
+
+            .offer-item {
+                grid-template-columns: 30px 1fr;
+                gap: 12px;
+                padding: 18px 0;
+            }
+
+            .offer-text { font-size: 0.88rem; }
         }
     </style>
 </head>
@@ -162,7 +214,6 @@
             <a href="index.html" class="btn btn-outline nav-btn">
                 <span class="btn-bracket">←</span> На головну
             </a>
-
             <button class="mobile-toggle" aria-label="Відкрити меню" id="mobile-toggle">
                 <span></span><span></span><span></span>
             </button>
@@ -179,21 +230,22 @@
     </header>
 
     <main>
+
         <!-- Hero -->
         <section class="hero contract-page-hero">
-            <div class="hero-bg contract-hero-bg" style="opacity:0.25; background-image:url('https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png');"></div>
+            <div class="hero-bg contract-hero-bg" style="opacity:0.3; background-image:url('https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png');"></div>
             <div class="hero-grid"></div>
-            <div class="container" style="position:relative;z-index:1;">
-                <div class="hero-content" style="max-width:680px; margin:0 auto; text-align:center;">
-                    <div class="hero-badge" style="margin:0 auto 1.5rem;">
+            <div class="container" style="position:relative; z-index:1;">
+                <div class="hero-content" style="max-width:640px; margin:0 auto; text-align:center;">
+                    <div class="hero-badge" style="margin: 0 auto 1.4rem; justify-content:center;">
                         <span class="hero-badge-dot"></span>
-                        <span class="tech-label">СПЕЦПРОГРАМА ДЛЯ МОЛОДІ</span>
+                        <span class="tech-label">Спецпрограма для молоді</span>
                     </div>
-                    <h1 class="hero-title" style="font-size:clamp(2.4rem,6vw,4rem);">
+                    <h1 class="hero-title" style="font-size: clamp(2.2rem, 6vw, 3.8rem);">
                         КОНТРАКТ <span class="text-neon">18-24:</span><br>
                         ДРОНИ ЗАМІСТЬ ШТУРМІВ
                     </h1>
-                    <p class="hero-desc" style="max-width:540px;margin:0 auto 2rem;">
+                    <p class="hero-desc" style="max-width:500px; margin: 0 auto 2rem; font-size:1rem;">
                         Робота з технологіями, гарантія профільного застосування та ідеальний старт кар'єри у Military Tech.
                     </p>
                     <a href="#apply" class="btn btn-primary btn-lg">ПОДАТИ ЗАЯВКУ</a>
@@ -204,68 +256,72 @@
         <!-- Contract Details -->
         <section class="section bg-surface">
             <div class="container">
-                <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:80px; align-items:start;">
+                <div class="contract-details-grid">
 
-                    <!-- Left: offer list -->
+                    <!-- Right: photo + info boxes (shows first on mobile) -->
+                    <div class="contract-right">
+                        <div class="contract-photo frame-box">
+                            <img src="https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png" alt="Контракт 18-24">
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                        </div>
+
+                        <div class="info-boxes">
+                            <div class="info-box">
+                                <div class="info-box-num font-tech">18–24</div>
+                                <h4 class="info-box-title">Вікові рамки</h4>
+                                <p class="info-box-desc">Навіть призовник без досвіду — молодість перевага при освоєнні технологій.</p>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-box-num font-tech">3 р.</div>
+                                <h4 class="info-box-title">Термін контракту</h4>
+                                <p class="info-box-desc">Перший контракт — 3 роки або до оголошення демобілізації.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left: text + offer list -->
                     <div>
                         <div class="tech-label mb-2">/// ПЕРЕВАГИ ПРОГРАМИ</div>
                         <h2 class="section-title mb-4">ЧОМУ САМЕ<br>ЦЕЙ КОНТРАКТ?</h2>
 
-                        <p style="font-size:1rem; color:var(--text-light); line-height:1.8; margin-bottom:2.5rem;">
-                            Сучасна війна — це війна технологій та інтелекту. Нам потрібні розумні оператори, здатні керувати складною технікою, а не кандидати для піхоти.
+                        <p style="font-size:0.95rem; color:var(--text-light); line-height:1.8; margin-bottom:2rem;">
+                            Сучасна війна — це війна технологій та інтелекту. Нам потрібні розумні оператори для складної техніки, а не кандидати для піхоти.
                         </p>
 
                         <div class="offer-list-v2">
                             <div class="offer-item">
                                 <span class="offer-index">[01]</span>
-                                <div class="offer-body">
+                                <div>
                                     <span class="offer-tag">ЖОДНИХ ШТУРМІВ</span>
-                                    <p class="offer-text">Виключно технологічні посади. Пілот FPV, оператор розвідувальних крил, інженер-зброяр або фахівець РЕБ — ваш вибір.</p>
+                                    <p class="offer-text">Виключно технологічні посади — пілот FPV, оператор розвідувальних крил, інженер-зброяр або фахівець РЕБ.</p>
                                 </div>
                             </div>
                             <div class="offer-item">
                                 <span class="offer-index">[02]</span>
-                                <div class="offer-body">
+                                <div>
                                     <span class="offer-tag">ГАРАНТІЯ СПЕЦІАЛЬНОСТІ</span>
-                                    <p class="offer-text">Офіційне відношення гарантує службу в нашому підрозділі на обраній посаді. Переведення в іншу частину — тільки за вашою згодою.</p>
+                                    <p class="offer-text">Офіційне відношення закріплює вас за нашим підрозділом на обраній посаді. Переведення — тільки за вашою згодою.</p>
                                 </div>
                             </div>
                             <div class="offer-item">
                                 <span class="offer-index">[03]</span>
-                                <div class="offer-body">
+                                <div>
                                     <span class="offer-tag">НАВЧАННЯ З НУЛЯ</span>
                                     <p class="offer-text">Не вмієте літати? Навчимо. Власний тренінговий центр: від симуляторів до бойових вильотів із повним навантаженням.</p>
                                 </div>
                             </div>
                             <div class="offer-item">
                                 <span class="offer-index">[04]</span>
-                                <div class="offer-body">
+                                <div>
                                     <span class="offer-tag">СТАБІЛЬНЕ ЗАБЕЗПЕЧЕННЯ</span>
-                                    <p class="offer-text">Заробітна плата від <strong style="color:var(--text-white)">20 000 до 130 000 грн</strong> залежно від виконання завдань. Повний пакет соціальних гарантій та статус УБД.</p>
+                                    <p class="offer-text">Від <strong style="color:var(--text-white)">20 000 до 130 000 грн</strong> залежно від виконання завдань. Повний пакет соцгарантій та статус УБД.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Right: info boxes + image -->
-                    <div>
-                        <div class="contract-image frame-box" style="margin-bottom:24px;">
-                            <img src="https://lasarsgroup.army/assets/finaly-accept-3Ueftpqy.png" alt="Контракт 18-24">
-                            <div class="frame-corner top-right"></div>
-                            <div class="frame-corner bottom-left"></div>
-                        </div>
-
-                        <div class="info-grid">
-                            <div class="info-box">
-                                <div class="info-box-num font-tech">18-24</div>
-                                <h4 class="info-box-title">ВІКОВІ РАМКИ</h4>
-                                <p class="info-box-desc">Навіть якщо ви призовник без досвіду — ваша молодість перевага при освоєнні технологій.</p>
-                            </div>
-                            <div class="info-box">
-                                <div class="info-box-num font-tech">3 р.</div>
-                                <h4 class="info-box-title">ТЕРМІН КОНТРАКТУ</h4>
-                                <p class="info-box-desc">Перший контракт — 3 роки або до оголошення демобілізації. Офіційно, прозоро.</p>
-                            </div>
+                        <div style="margin-top: 2.5rem;">
+                            <a href="#apply" class="btn btn-primary">ПОДАТИ ЗАЯВКУ</a>
                         </div>
                     </div>
 
@@ -279,7 +335,7 @@
                 <div class="section-header text-center mb-5">
                     <div class="tech-label mb-2">/// ІНІЦІАЛІЗАЦІЯ</div>
                     <h2 class="section-title">ЗАЯВКА НА ПРОГРАМУ</h2>
-                    <p style="color:var(--text-light);margin-top:.75rem;font-size:.95rem;">
+                    <p style="color:var(--text-light); margin-top:.75rem; font-size:.92rem;">
                         Наші рекрутери зв'яжуться з вами для співбесіди на спецпрограму «18-24».
                     </p>
                 </div>
@@ -329,6 +385,7 @@
                 </form>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
@@ -365,10 +422,6 @@
             </div>
         </div>
     </footer>
-
-    <div class="mobile-sticky-cta">
-        <a href="#apply" class="btn btn-primary btn-block font-tech">[ ПОДАТИ_ЗАЯВКУ ]</a>
-    </div>
 
     <script src="script.js"></script>
 </body>

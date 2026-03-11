@@ -1001,28 +1001,6 @@ textarea.form-control { resize: vertical; min-height: 72px; line-height: 1.6; }
 }
 
 /* ═══════════════════════════════════════════
-   MOBILE STICKY CTA
-═══════════════════════════════════════════ */
-.mobile-sticky-cta {
-  display: none;
-  position: fixed; bottom: 0; left: 0;
-  width: 100%; z-index: 900;
-  padding: 12px 16px;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom));
-  background: linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.97) 60%, rgba(5,5,5,0) 100%);
-}
-
-.mobile-sticky-cta .btn {
-  height: 52px; font-size: 0.88rem;
-  letter-spacing: 0.1em;
-  box-shadow: 0 0 28px rgba(200,245,0,0.18);
-}
-
-@media (max-width: 768px) {
-  .mobile-sticky-cta { display: block; }
-}
-
-/* ═══════════════════════════════════════════
    MOBILE — 768px
 ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
@@ -1117,7 +1095,7 @@ textarea.form-control { resize: vertical; min-height: 72px; line-height: 1.6; }
   .submit-btn { height: 52px; font-size: 0.84rem; }
 
   /* Footer */
-  .footer { padding: 52px 0 calc(72px + env(safe-area-inset-bottom)); }
+  .footer { padding: 48px 0 40px; }
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
   .footer-links { grid-template-columns: 1fr 1fr; gap: 24px; }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
